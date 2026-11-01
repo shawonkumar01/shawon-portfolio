@@ -14,6 +14,13 @@ export default function Skills() {
               <li>REST APIs</li>
               <li>JWT auth</li>
             </ul>
+            <div className="code-block">
+              <code>
+                <span className="c">// Typical API structure</span><br />
+                <span className="k">@Controller</span>(<span className="s">'users'</span>)<br />
+                <span className="k">export class</span> UsersController &#123;&#125;
+              </code>
+            </div>
           </div>
           <div>
             <h3>Frontend</h3>
@@ -24,6 +31,14 @@ export default function Skills() {
               <li>Tailwind</li>
               <li>JavaScript</li>
             </ul>
+            <div className="code-block">
+              <code>
+                <span className="c">// Modern React patterns</span><br />
+                <span className="k">export default function</span> Page() &#123;<br />
+                &nbsp;&nbsp;<span className="k">return</span> &lt;div /&gt;<br />
+                &#125;
+              </code>
+            </div>
           </div>
           <div>
             <h3>Data and infra</h3>
@@ -34,6 +49,14 @@ export default function Skills() {
               <li>Docker</li>
               <li>TypeORM</li>
             </ul>
+            <div className="code-block">
+              <code>
+                <span className="c">// Database config</span><br />
+                <span className="k">TypeOrmModule</span>.forFeature([<br />
+                &nbsp;&nbsp;User, Product<br />
+                ])
+              </code>
+            </div>
           </div>
           <div>
             <h3>Delivery</h3>
@@ -44,6 +67,14 @@ export default function Skills() {
               <li>Render</li>
               <li>Stripe, Cloudinary</li>
             </ul>
+            <div className="code-block">
+              <code>
+                <span className="c"># Automated deployment</span><br />
+                <span className="k">on:</span> [push]<br />
+                <span className="k">jobs:</span><br />
+                &nbsp;&nbsp;deploy:
+              </code>
+            </div>
           </div>
         </div>
       </div>

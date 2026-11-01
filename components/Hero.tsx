@@ -68,6 +68,8 @@ export default function Hero() {
         if (colon) return `<span class="k">${str}</span>${colon}`
         return `<span class="s">${str}</span>`
       })
+      .replace(/(\/\*.*?\*\/|\/\/.*$)/gm, '<span class="c">$1</span>')
+      .replace(/\b(true|false|null)\b/g, '<span class="k">$1</span>')
   }
 
   useEffect(() => {
@@ -113,6 +115,11 @@ export default function Hero() {
           <p className="avail"><i></i>Open to: Full-time, Part-time, On-site, Remote</p>
           <p className="role">Full-stack engineer who ships backends that hold up.</p>
           <p className="lede">I build production web apps with NestJS, Next.js and TypeScript, from the API and database to the deployed frontend.</p>
+          <div className="terminal-snippet">
+            <code>
+              <span className="prompt">$</span> curl -X GET https://api.shawon.dev/profile
+            </code>
+          </div>
           <div className="cta">
             <a className="btn" href="#projects">See my work</a>
             <a className="btn ghost" href="#contact">Get in touch</a>

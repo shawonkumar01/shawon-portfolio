@@ -9,6 +9,9 @@ export default function Projects() {
             <img src="/voltix.png" alt="Voltix e-commerce platform screenshot" loading="lazy" />
           </div>
           <div className="body">
+            <div className="api-endpoint">
+              <code>GET /api/projects/voltix</code>
+            </div>
             <span className="tag">Featured</span>
             <h3>Voltix, e-commerce platform</h3>
             <p>A full-stack store with JWT refresh-token auth, Google sign-in, Stripe payments, Redis caching and Cloudinary image storage. GitHub Actions deploys it automatically to Render and Vercel.</p>
@@ -33,6 +36,9 @@ export default function Projects() {
             <img src="/projects/famms.png" alt="Famms e-commerce website screenshot" loading="lazy" />
           </div>
           <div className="body">
+            <div className="api-endpoint">
+              <code>GET /api/projects/famms</code>
+            </div>
             <h3>Famms, e-commerce web</h3>
             <p>A dynamic store with a live shopping cart, login, payment and printable orders. Livewire updates the page without reloads, and the styles are split into SCSS components.</p>
             <div className="chips">
