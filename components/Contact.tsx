@@ -8,7 +8,7 @@ export default function Contact() {
           <a className="mail" href="mailto:shawonkumar.139@gmail.com">shawonkumar.139@gmail.com</a>
           <div className="rows">
             <a href="tel:+8801639426477">+880 1639 426 477</a>
-            <a href="https://linkedin.com/in/shawonkumar01">LinkedIn</a>
+            <a href="https://linkedin.com/in/shawonkumar15">LinkedIn</a>
             <a href="https://github.com/shawonkumar01">GitHub</a>
           </div>
         </div>

@@ -1,4 +1,29 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+
 export default function Projects() {
+  const observerRef = useRef<IntersectionObserver | null>(null)
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in')
+            observerRef.current?.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const projects = document.querySelectorAll('.proj')
+    projects.forEach((proj) => observerRef.current?.observe(proj))
+
+    return () => observerRef.current?.disconnect()
+  }, [])
+
   return (
     <section id="projects">
       <div className="wrap">

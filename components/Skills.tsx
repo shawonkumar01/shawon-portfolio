@@ -1,4 +1,36 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+
 export default function Skills() {
+  const observerRef = useRef<IntersectionObserver | null>(null)
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const stackItems = entry.target.querySelectorAll('.stack > div')
+            stackItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add('animate-fade-in')
+              }, index * 100)
+            })
+            observerRef.current?.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const stackSection = document.querySelector('.stack')
+    if (stackSection) {
+      observerRef.current.observe(stackSection)
+    }
+
+    return () => observerRef.current?.disconnect()
+  }, [])
+
   return (
     <section id="stack">
       <div className="wrap">
@@ -16,9 +48,9 @@ export default function Skills() {
             </ul>
             <div className="code-block">
               <code>
-                <span className="c">// Typical API structure</span><br />
-                <span className="k">@Controller</span>(<span className="s">'users'</span>)<br />
-                <span className="k">export class</span> UsersController &#123;&#125;
+                // Typical API structure<br />
+                @Controller('users')<br />
+                export class UsersController &#123;&#125;
               </code>
             </div>
           </div>
@@ -33,9 +65,9 @@ export default function Skills() {
             </ul>
             <div className="code-block">
               <code>
-                <span className="c">// Modern React patterns</span><br />
-                <span className="k">export default function</span> Page() &#123;<br />
-                &nbsp;&nbsp;<span className="k">return</span> &lt;div /&gt;<br />
+                // Modern React patterns<br />
+                export default function Page() &#123;<br />
+                &nbsp;&nbsp;return &lt;div /&gt;<br />
                 &#125;
               </code>
             </div>
@@ -51,8 +83,8 @@ export default function Skills() {
             </ul>
             <div className="code-block">
               <code>
-                <span className="c">// Database config</span><br />
-                <span className="k">TypeOrmModule</span>.forFeature([<br />
+                // Database config<br />
+                TypeOrmModule.forFeature([<br />
                 &nbsp;&nbsp;User, Product<br />
                 ])
               </code>
@@ -69,9 +101,9 @@ export default function Skills() {
             </ul>
             <div className="code-block">
               <code>
-                <span className="c"># Automated deployment</span><br />
-                <span className="k">on:</span> [push]<br />
-                <span className="k">jobs:</span><br />
+                # Automated deployment<br />
+                on: [push]<br />
+                jobs:<br />
                 &nbsp;&nbsp;deploy:
               </code>
             </div>

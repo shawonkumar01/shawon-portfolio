@@ -18,7 +18,23 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
       </head>
-      <body>{children}</body>
+      <body>
+        <div className="floating-code-bg">&lt;/&gt;</div>
+        <div className="floating-code-bg">{`{ }`}</div>
+        <div className="floating-code-bg">[ ]</div>
+        <div className="floating-code-bg">;</div>
+        <div className="floating-code-bg">{`const`}</div>
+        <div className="floating-code-bg">=&gt;</div>
+        <div className="floating-code-bg">`</div>
+        <div className="floating-code-bg">&lt;/&gt;</div>
+        <div className="floating-code-bg">{`{ }`}</div>
+        <div className="floating-code-bg">[ ]</div>
+        <div className="floating-code-bg">;</div>
+        <div className="floating-code-bg">{`const`}</div>
+        <div className="floating-code-bg">=&gt;</div>
+        <div className="floating-code-bg">`</div>
+        {children}
+      </body>
     </html>
   )
 }
